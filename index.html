@@ -10,37 +10,24 @@
     <h1>Fundamentos javascript</h1>
 
     <script>
-        let a = 2
-        {
-            let a = 1
+        let num1 = 5
+        let num2 =9
+
+        function sumar(num1,num2) {
+            console.log(num1+num2)
+        }
+
+        sumar(num1,num2)
+
+        num1 = 6
+        num2 = 4
+        function multiplicar(num1,num2) {
+            return (num1*num2)
         }
         
-        const PI = 3.1416
-        console.log(PI)
+        let resultado = multiplicar(num1,num2)
+        console.log(resultado)
 
-        console.log(a)
-
-        let objeto = {
-            nombre: "Daniel",
-            edad: 21
-        }
-
-        let colores = ["blanco","negro","azul"]
-        console.log(objeto)
-        console.log(colores)
-
-        let num1 = new Number(5)
-        let num2 = "10"
-
-        console.log(num1 + parseInt(num2))
-
-        let verdadero = false
-        
-        if (verdadero) {
-            console.log("hola")
-        }else{
-            console.log("adios")
-        }
     </script>
 </body>
 </html>
