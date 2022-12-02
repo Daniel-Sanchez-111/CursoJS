@@ -10,20 +10,25 @@
     <h1>Fundamentos javascript</h1>
 
     <script>
-        
-        const daniel = {
-            nombre: "Daniel",
-            apellido:"Sanchez",
-            ocupacion:"Estudiante",
-            carrera:"IDS",
-            pasatiempos: ["Jugar","Comer","Estudiar"],
-            redes: {facebook:"facebook",youtube:"youtube"},
-            saludar:function saludar() {
-                console.log(`Hola me llamo ${this.nombre}`)
-            }}
-        daniel.saludar()
-        console.log(daniel["nombre"],daniel.ocupacion,daniel.carrera,daniel.pasatiempos,daniel.redes.facebook)
+      
+      let modulo = 5%2
+      console.log(modulo)
+        let edad = 18
+        let mayorEdad = (edad>=18)? "Eres mayor de edad":"Eres menor de edad" 
+        console.log(mayorEdad)
 
+        switch (edad) {
+            case 18:
+                console.log("Tu edad es aceptada")
+                break;
+            case 20:
+                console.log("Tu edad es normal")
+
+                break;
+            default:
+                console.log("NOse")
+                break;
+        }
     </script>
 </body>
 </html>
