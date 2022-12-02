@@ -10,23 +10,19 @@
     <h1>Fundamentos javascript</h1>
 
     <script>
-        let num1 = 5
-        let num2 =9
-
-        function sumar(num1,num2) {
-            console.log(num1+num2)
-        }
-
-        sumar(num1,num2)
-
-        num1 = 6
-        num2 = 4
-        function multiplicar(num1,num2) {
-            return (num1*num2)
-        }
         
-        let resultado = multiplicar(num1,num2)
-        console.log(resultado)
+        const daniel = {
+            nombre: "Daniel",
+            apellido:"Sanchez",
+            ocupacion:"Estudiante",
+            carrera:"IDS",
+            pasatiempos: ["Jugar","Comer","Estudiar"],
+            redes: {facebook:"facebook",youtube:"youtube"},
+            saludar:function saludar() {
+                console.log(`Hola me llamo ${this.nombre}`)
+            }}
+        daniel.saludar()
+        console.log(daniel["nombre"],daniel.ocupacion,daniel.carrera,daniel.pasatiempos,daniel.redes.facebook)
 
     </script>
 </body>
