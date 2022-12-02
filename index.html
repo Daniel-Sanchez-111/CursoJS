@@ -10,51 +10,20 @@
     <h1>Fundamentos javascript</h1>
 
     <script>
-        
-        const array = [1,2,3,4,5,6]
-        let contador = 0
-
-        const daniel = {
-            nombre: "Daniel",
-            apellido:"Sanchez",
-            ocupacion:"Estudiante",
-            carrera:"IDS",
-            pasatiempos: ["Jugar","Comer","Estudiar"],
-            redes: {facebook:"facebook",youtube:"youtube"}
-        }
-
-        let cadena = "Hola mundo"
-
-        for (let i = 0; i < array.length; i++) {
-            console.log(i);
-            
-        }
-        console.log("")
-        while (contador<array.length) {
-            console.log(array[contador])
-            contador++
-        }
-
-        console.log("")
-
-        array.forEach(element => {
-            console.log(element)
-        });
-
-        for (const key in daniel) {
-            if (Object.hasOwnProperty.call(daniel, key)) {
-                console.log(`Key; ${key}, value: ${daniel[key]}`)
-                
+       /* Objetos literales */
+          let nombre = "solovino"
+          let edad = 3
+          const dog = {
+            nombre,
+            edad,
+            raza:"callejero",
+            ladrar(){
+                console.log("ladrido")
             }
-        }
+          }
 
-        for (const iterator of array) {
-            console.log(iterator)
-        }
+          console.log(dog)
 
-        for (const element of cadena) {
-            console.log(element)
-        }
     </script>
 </body>
 </html>
