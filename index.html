@@ -10,19 +10,24 @@
     <h1>Fundamentos javascript</h1>
 
     <script>
-       /* Objetos literales */
-          let nombre = "solovino"
-          let edad = 3
-          const dog = {
-            nombre,
-            edad,
-            raza:"callejero",
-            ladrar(){
-                console.log("ladrido")
-            }
-          }
+       
+        function sumar(a, b, ...c) {
+            let resultado = a+b;
 
-          console.log(dog)
+            c.forEach(function(n) {
+                resultado+=n;
+            });
+            console.log(resultado)
+        }
+        sumar(1,2)
+        sumar(1,2,3,4,5)
+        sumar(1,2,3,4)
+
+        const arr1 = [1,2,3,4,5],
+            arr2 = [6,7,8,9,10];
+        
+        const arr3 = [...arr1,...arr2];
+        console.log(arr3);
 
     </script>
 </body>
