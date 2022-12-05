@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Fundamentos javascript</h1>
 
     <script>
-       
-        function sumar(a, b, ...c) {
-            let resultado = a+b;
+      /* const saludar = (nombre)=> console.log(`hola ${nombre}`)
 
-            c.forEach(function(n) {
-                resultado+=n;
-            });
-            console.log(resultado)
-        }
-        sumar(1,2)
-        sumar(1,2,3,4,5)
-        sumar(1,2,3,4)
+        saludar("daniel"); */
 
-        const arr1 = [1,2,3,4,5],
-            arr2 = [6,7,8,9,10];
-        
-        const arr3 = [...arr1,...arr2];
-        console.log(arr3);
+      /* No es necesario utilizar los parentesis si se pasa UN PARAMETRO, no mas */
+      const saludar = (nombre) => console.log(`hola ${nombre}`);
+      saludar("daniel");
 
+      /* Las llaves se pueden omitir si solo es una linea de codigo */
+      const sumar = (a, b) => a + b;
+      console.log(sumar(9, 9));
+
+      const funcionDeVariasLineas = () => {
+        console.log("Uno");
+        console.log("dos");
+        console.log("tres");
+      };
+
+      funcionDeVariasLineas();
+
+      const numeros = [1, 2, 3, 4, 5];
+
+      numeros.forEach( (el,index) => console.log(`El elemento ${el} esta en la posicion ${index}`));
+      
     </script>
-</body>
+  </body>
 </html>
