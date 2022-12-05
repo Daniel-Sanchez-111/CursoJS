@@ -10,30 +10,59 @@
     <h1>Fundamentos javascript</h1>
 
     <script>
-      /* const saludar = (nombre)=> console.log(`hola ${nombre}`)
+        
+        /* function Animal(nombre,genero) {
+            
+            this.nombre = nombre;
+            this.genero = genero;
 
-        saludar("daniel"); */
+            
+            this.sonar = function () {
+                console.log("sonidos");
+            }
+        } */
 
-      /* No es necesario utilizar los parentesis si se pasa UN PARAMETRO, no mas */
-      const saludar = (nombre) => console.log(`hola ${nombre}`);
-      saludar("daniel");
+        function Animal(nombre,genero) {
+            this.nombre = nombre;
+            this.genero = genero;
+        }
 
-      /* Las llaves se pueden omitir si solo es una linea de codigo */
-      const sumar = (a, b) => a + b;
-      console.log(sumar(9, 9));
+        Animal.prototype.sonar = function () {
+            console.log("sonidos");
+        }
 
-      const funcionDeVariasLineas = () => {
-        console.log("Uno");
-        console.log("dos");
-        console.log("tres");
-      };
+        Animal.prototype.saludar = function () {
+            console.log(`mi nombre es ${this.nombre}`);
+        }
 
-      funcionDeVariasLineas();
+        function Perro(nombre,genero,tamaño) {
+            this.super = Animal;
+            this.super(nombre,genero);
+            this.tamaño = tamaño;
+        }
 
-      const numeros = [1, 2, 3, 4, 5];
+        /* Perro hereda de animal */
+        Perro.prototype = new Animal();
+        Perro.prototype.constructor = Perro
 
-      numeros.forEach( (el,index) => console.log(`El elemento ${el} esta en la posicion ${index}`));
-      
+
+        /* Sobreescribir metodos */
+        Perro.prototype.sonar = function() {
+            console.log("soy un perro");
+        }
+
+        Perro.prototype.ladrar = function(){
+            console.log("wow");
+        }
+        const snoopy = new Animal("snoopy","macho"),
+        lola = new Animal("lola","hembra");
+
+        const temis = new Perro("temis","macho","pequeño");
+
+        console.log(lola);
+        snoopy.saludar();
+        console.log(temis);
+        temis.ladrar();
     </script>
   </body>
 </html>
