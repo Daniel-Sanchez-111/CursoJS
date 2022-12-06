@@ -10,50 +10,12 @@
     <h1>Fundamentos javascript</h1>
 
     <script>
-    
         
-        class Animal{
-            constructor(nombre,genero){
-                this.nombre = nombre;
-                this.genero = genero;
-            }
-        }
-
-        class Perro extends Animal{
-            constructor(nombre,genero,tamaño){
-                /* super() manda a llamar el constructor del padre */
-                super(nombre,genero);
-                this.tamaño = tamaño;
-            }
-
-            sonar(){
-                console.log("Perro y ladrido");
-            }
-
-            ladrar(){
-                console.log("wow wow");
-            }
-
-            static queEres(){
-                console.log("texto");
-            }
-
-            get getTamaño(){
-                return this.tamaño;
-            }
-
-            set setTamaño(tamaño){
-                this.tamaño = tamaño;
-            }
-        }
-
-        const scooby = new Perro("scooby","macho","grande");
-        console.log(scooby);
-        console.log(scooby.getTamaño);
-        /* Getters y setters se manejan como propiedades, no como metodos */
-        scooby.setTamaño = "chico";
-        console.log(scooby.getTamaño);
-        Perro.queEres(); 
+        let fecha = new Date();
+        let año = 1994;
+        console.log(fecha.getFullYear() - año);
+        let a = prompt("hola");
+        console.log(a);
     </script>
   </body>
 </html>
