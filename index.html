@@ -10,59 +10,50 @@
     <h1>Fundamentos javascript</h1>
 
     <script>
+    
         
-        /* function Animal(nombre,genero) {
-            
-            this.nombre = nombre;
-            this.genero = genero;
-
-            
-            this.sonar = function () {
-                console.log("sonidos");
+        class Animal{
+            constructor(nombre,genero){
+                this.nombre = nombre;
+                this.genero = genero;
             }
-        } */
-
-        function Animal(nombre,genero) {
-            this.nombre = nombre;
-            this.genero = genero;
         }
 
-        Animal.prototype.sonar = function () {
-            console.log("sonidos");
+        class Perro extends Animal{
+            constructor(nombre,genero,tamaño){
+                /* super() manda a llamar el constructor del padre */
+                super(nombre,genero);
+                this.tamaño = tamaño;
+            }
+
+            sonar(){
+                console.log("Perro y ladrido");
+            }
+
+            ladrar(){
+                console.log("wow wow");
+            }
+
+            static queEres(){
+                console.log("texto");
+            }
+
+            get getTamaño(){
+                return this.tamaño;
+            }
+
+            set setTamaño(tamaño){
+                this.tamaño = tamaño;
+            }
         }
 
-        Animal.prototype.saludar = function () {
-            console.log(`mi nombre es ${this.nombre}`);
-        }
-
-        function Perro(nombre,genero,tamaño) {
-            this.super = Animal;
-            this.super(nombre,genero);
-            this.tamaño = tamaño;
-        }
-
-        /* Perro hereda de animal */
-        Perro.prototype = new Animal();
-        Perro.prototype.constructor = Perro
-
-
-        /* Sobreescribir metodos */
-        Perro.prototype.sonar = function() {
-            console.log("soy un perro");
-        }
-
-        Perro.prototype.ladrar = function(){
-            console.log("wow");
-        }
-        const snoopy = new Animal("snoopy","macho"),
-        lola = new Animal("lola","hembra");
-
-        const temis = new Perro("temis","macho","pequeño");
-
-        console.log(lola);
-        snoopy.saludar();
-        console.log(temis);
-        temis.ladrar();
+        const scooby = new Perro("scooby","macho","grande");
+        console.log(scooby);
+        console.log(scooby.getTamaño);
+        /* Getters y setters se manejan como propiedades, no como metodos */
+        scooby.setTamaño = "chico";
+        console.log(scooby.getTamaño);
+        Perro.queEres(); 
     </script>
   </body>
 </html>
