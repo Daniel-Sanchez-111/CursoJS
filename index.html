@@ -33,53 +33,57 @@
 
       const daniel = {
         nombre: "daniel",
-        apellido: "sanchez"
-      }
+        apellido: "sanchez",
+      };
 
       function convertirCadena(cadena) {
         return String(cadena);
       }
 
-      function contarCaracteres(cadena) {
-        return convertirCadena(cadena).length;        
+      function contarCaracteres(cadena = "") {
+
+        if (!cadena) {
+          console.warn("Debe introducir una cadena");
+        } else {
+          return convertirCadena(cadena).length;
+        }
+        
       }
 
-      function cortarCadena(cadena,caracter) {
-        if(typeof(caracter)==="number"){
-          return convertirCadena(cadena).slice(0,caracter);
-        }else{
+      function cortarCadena(cadena = "", caracter) {
+        if (typeof caracter === "number") {
+          return convertirCadena(cadena).slice(0, caracter);
+        } else {
           let caracterConvertido = parseInt(caracter);
-          return convertirCadena(cadena).slice(0,caracterConvertido);
+          return convertirCadena(cadena).slice(0, caracterConvertido);
         }
       }
 
-      function arrayDeCadenas(cadena,caracter) {
+      function arrayDeCadenas(cadena = "", caracter) {
         return convertirCadena(cadena).split(caracter);
       }
 
-      function stringRepetido(cadena, cantidad) {
+      function stringRepetido(cadena = "", cantidad) {
         let concatenacion = "";
         let cadenaConvertida = convertirCadena(cadena);
-        
-        for (let i = 0; i < cantidad; i++) {
-          concatenacion+=cadenaConvertida+" ";
-        }
-      console.log(concatenacion);
 
+        for (let i = 0; i < cantidad; i++) {
+          concatenacion += cadenaConvertida + " ";
+        }
+        console.log(concatenacion);
       }
 
       console.log("Ejercicio 1");
       console.log(contarCaracteres("hola mundo"));
 
-
       console.log("Ejercicio 2");
-      console.log(cortarCadena("hola mundo","4"));
+      console.log(cortarCadena("hola mundo", "4"));
 
       console.log("Ejercicio 3");
-      console.log(arrayDeCadenas("hola mundo como estas"," "));
+      console.log(arrayDeCadenas("hola mundo como estas", " "));
 
       console.log("Ejercicio 4");
-      stringRepetido("hola mundo",4);
+      stringRepetido("hola mundo", 4);
     </script>
   </body>
 </html>
