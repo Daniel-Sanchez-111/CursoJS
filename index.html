@@ -8,14 +8,16 @@
   </head>
   <body>
     <h1>Fundamentos javascript</h1>
-
-    <script>
+    
+    <script type="text/javascript">
         
-        let fecha = new Date();
-        let año = 1994;
-        console.log(fecha.getFullYear() - año);
-        let a = prompt("hola");
-        console.log(a);
+        
+
+        let cadena = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet quae accusantium architecto ex a pariatur sint voluptates velit libero soluta?";
+        let expresion = new RegExp("lorem","ig");
+        const exp = /lorem/ig;
+        console.log(expresion.test(cadena));
+        console.log(exp.exec(cadena));
     </script>
   </body>
 </html>
