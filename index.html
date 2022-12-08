@@ -40,50 +40,52 @@
         return String(cadena);
       }
 
-      function contarCaracteres(cadena = "") {
+      const contarCaracteres = (cadena = "") =>
+        !cadena
+          ? console.warn("Debe introducir una cadena")
+          : console.info(convertirCadena(cadena).length);
 
-        if (!cadena) {
-          console.warn("Debe introducir una cadena");
-        } else {
-          return convertirCadena(cadena).length;
-        }
-        
-      }
+      const cortarCadena = (cadena = "", longitud = undefined) =>
+        !cadena || longitud === undefined
+          ? console.warn("Debe introducir todos los parametros")
+          : console.info(convertirCadena(cadena).slice(0, parseInt(longitud)));
 
-      function cortarCadena(cadena = "", caracter) {
-        if (typeof caracter === "number") {
-          return convertirCadena(cadena).slice(0, caracter);
-        } else {
-          let caracterConvertido = parseInt(caracter);
-          return convertirCadena(cadena).slice(0, caracterConvertido);
-        }
-      }
+      const arrayDeCadenas = (cadena = "", caracter = undefined) =>
+        !cadena
+          ? console.warn("Debe introducir una cadena")
+          : caracter === undefined
+          ? console.warn("Debe introducir un caracter")
+          : console.info(convertirCadena(cadena).split(caracter));
 
-      function arrayDeCadenas(cadena = "", caracter) {
-        return convertirCadena(cadena).split(caracter);
-      }
+      const stringRepetido = (cadena = "", cantidad = undefined) => {
+        if (!cadena) return console.warn("Debe introducir una cadena");
 
-      function stringRepetido(cadena = "", cantidad) {
+        if (cantidad === undefined) return console.warn("Debe introducir un caracter");
+
+        if (cantidad===0 || cantidad<0 ||cantidad === "0") return console.error("El numero debe ser mayor a 0");
+
         let concatenacion = "";
         let cadenaConvertida = convertirCadena(cadena);
 
-        for (let i = 0; i < cantidad; i++) {
+        for (let i = 0; i < parseInt(cantidad); i++) {
           concatenacion += cadenaConvertida + " ";
         }
-        console.log(concatenacion);
-      }
 
-      console.log("Ejercicio 1");
-      console.log(contarCaracteres("hola mundo"));
+        return console.info(concatenacion);
+      };
 
-      console.log("Ejercicio 2");
-      console.log(cortarCadena("hola mundo", "4"));
+      console.info("Ejercicio 1");
+      contarCaracteres("hola mundo");
 
-      console.log("Ejercicio 3");
-      console.log(arrayDeCadenas("hola mundo como estas", " "));
+      console.info("Ejercicio 2");
+      cortarCadena("hola mundo", "6");
 
-      console.log("Ejercicio 4");
-      stringRepetido("hola mundo", 4);
+      console.info("Ejercicio 3");
+      arrayDeCadenas("hola mundo", " ");
+
+      console.info("Ejercicio 4");
+      stringRepetido("hola mundo",4);
+      
     </script>
   </body>
 </html>
