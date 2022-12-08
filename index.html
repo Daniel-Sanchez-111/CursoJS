@@ -36,9 +36,9 @@
         apellido: "sanchez",
       };
 
-      function convertirCadena(cadena) {
-        return String(cadena);
-      }
+      /* EJERCICIOS 1 - 4 */
+
+      const convertirCadena = (cadena) => String(cadena);
 
       const contarCaracteres = (cadena = "") =>
         !cadena
@@ -60,9 +60,11 @@
       const stringRepetido = (cadena = "", cantidad = undefined) => {
         if (!cadena) return console.warn("Debe introducir una cadena");
 
-        if (cantidad === undefined) return console.warn("Debe introducir un caracter");
+        if (cantidad === undefined)
+          return console.warn("Debe introducir un caracter");
 
-        if (cantidad===0 || cantidad<0 ||cantidad === "0") return console.error("El numero debe ser mayor a 0");
+        if (cantidad === 0 || cantidad < 0 || cantidad === "0")
+          return console.error("El numero debe ser mayor a 0");
 
         let concatenacion = "";
         let cadenaConvertida = convertirCadena(cadena);
@@ -74,7 +76,7 @@
         return console.info(concatenacion);
       };
 
-      console.info("Ejercicio 1");
+      /* console.info("Ejercicio 1");
       contarCaracteres("hola mundo");
 
       console.info("Ejercicio 2");
@@ -84,8 +86,61 @@
       arrayDeCadenas("hola mundo", " ");
 
       console.info("Ejercicio 4");
-      stringRepetido("hola mundo",4);
-      
+      stringRepetido("hola mundo", 4); */
+
+      /* EJERCICIOS 1 - 4  */
+
+      /* ---EJERCICIOS 5 - 8 */
+
+      const invertirCadena = (cadena = "", busqueda = undefined) =>
+        !cadena
+          ? console.warn("Debe introducir una cadena")
+          : console.info(convertirCadena(cadena).split("").reverse().join(""));
+
+      const contarRepetida = (cadena = "", busqueda = undefined) => {
+        if (!cadena || busqueda === undefined)
+          return console.warn("Debe introducir todos los parametros");
+
+        let arreglo = convertirCadena(cadena).split(" ");
+        let contador = 0;
+
+        for (let i = 0; i < arreglo.length; i++) {
+          if (arreglo[i] === busqueda) {
+            contador++;
+          }
+        }
+
+        return console.info(contador);
+      };
+
+      const esPalindromo = (cadena = "") => {
+        if (!cadena) return console.warn("Debe introducir una cadena");
+
+        let invertido = convertirCadena(cadena).split("").reverse().join("");
+
+        if (convertirCadena(cadena) === invertido) {
+          return console.info("Es palindromo");
+        } else {
+          return console.info("No es palindromo");
+        }
+      };
+
+      const eliminarPatron = (cadena = "", patron = "") =>
+        !cadena || !patron
+          ? console.warn("Debe introducir todos los parametros")
+          : console.info(convertirCadena(cadena).replaceAll(patron, ""));
+
+      console.info("Ejercicio 5");
+      invertirCadena("hola mundo");
+
+      console.info("Ejercicio 6");
+      contarRepetida("hola mundo adios mundo", "mundo");
+
+      console.info("Ejercicio 7");
+      esPalindromo("salas");
+
+      console.info("Ejercicio 8");
+      eliminarPatron("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
     </script>
   </body>
 </html>
