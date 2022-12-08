@@ -31,14 +31,9 @@
         console.log("Version Facebook");
       })(); */
 
-      const daniel = {
-        nombre: "daniel",
-        apellido: "sanchez",
-      };
-
       /* EJERCICIOS 1 - 4 */
 
-      const convertirCadena = (cadena) => String(cadena);
+      /* const convertirCadena = (cadena) => String(cadena);
 
       const contarCaracteres = (cadena = "") =>
         !cadena
@@ -74,7 +69,7 @@
         }
 
         return console.info(concatenacion);
-      };
+      }; */
 
       /* console.info("Ejercicio 1");
       contarCaracteres("hola mundo");
@@ -92,7 +87,7 @@
 
       /* EJERCICIOS 5 - 8 */
 
-      const invertirCadena = (cadena = "") =>
+      /*       const invertirCadena = (cadena = "") =>
         !cadena
           ? console.warn("Debe introducir una cadena")
           : console.info(convertirCadena(cadena).split("").reverse().join(""));
@@ -128,7 +123,7 @@
           ? console.warn("Debe introducir todos los parametros")
           : console.info(
               convertirCadena(cadena).replace(new RegExp(patron, "ig"), "")
-            );
+            ); */
 
       /* EJERCICIOS 5 - 8 */
 
@@ -147,15 +142,17 @@
       /* Ejercicios 9 - 11 */
 
       const numeroAleatorio = () =>
-        console.info(Math.round(Math.random() * (600 - 501) + 501));
+        console.info(Math.round(Math.random() * 100) + 500);
 
-      const esCapicua = (numero = undefined) => {
-        if (numero === undefined)
-          return console.warn("Debe introducir un numero");
-        let numeroConvertido = numero.toString();
-        let invertido = numeroConvertido.split("").reverse().join("");
+      const esCapicua = (numero = 0) => {
+        if (!numero) return console.warn("Debe introducir un numero");
 
-        return numeroConvertido === invertido
+        if (typeof numero !== "number") return console.error("Ni es un numero");
+
+        numero = numero.toString();
+        let invertido = numero.split("").reverse().join("");
+
+        return numero === invertido
           ? console.info("El numero es capicua")
           : console.info("El numero no es capicua");
       };
@@ -163,6 +160,13 @@
       const factorial = (numero = undefined) => {
         if (numero === undefined)
           return console.warn("Debe introducir un numero");
+
+        if (typeof numero !== "number") return console.error("No es un numero");
+
+        if (numero === 0) return console.warn("Debe ser mayor a 0");
+
+        if (Math.sign(numero) === -1)
+          return console.error("El numero no puede ser negativo");
 
         let i = 1;
         let producto = i;
@@ -173,6 +177,7 @@
         return console.info(producto);
       };
 
+      /* Ejercicios 9 - 11 */
       numeroAleatorio();
       esCapicua(1991);
       factorial(5);
