@@ -90,7 +90,7 @@
 
       /* EJERCICIOS 1 - 4  */
 
-      /* ---EJERCICIOS 5 - 8 */
+      /* EJERCICIOS 5 - 8 */
 
       const invertirCadena = (cadena = "") =>
         !cadena
@@ -130,7 +130,9 @@
               convertirCadena(cadena).replace(new RegExp(patron, "ig"), "")
             );
 
-      console.info("Ejercicio 5");
+      /* EJERCICIOS 5 - 8 */
+
+      /*  console.info("Ejercicio 5");
       invertirCadena("hola mundo");
 
       console.info("Ejercicio 6");
@@ -140,7 +142,40 @@
       esPalindromo("salas");
 
       console.info("Ejercicio 8");
-      eliminarPatron("xyz1, xyz2, xyz3, xyz4 y xyz5", "xYz");
+      eliminarPatron("xyz1, xyz2, xyz3, xyz4 y xyz5", "xYz"); */
+
+      /* Ejercicios 9 - 11 */
+
+      const numeroAleatorio = () =>
+        console.info(Math.round(Math.random() * (600 - 501) + 501));
+
+      const esCapicua = (numero = undefined) => {
+        if (numero === undefined)
+          return console.warn("Debe introducir un numero");
+        let numeroConvertido = numero.toString();
+        let invertido = numeroConvertido.split("").reverse().join("");
+
+        return numeroConvertido === invertido
+          ? console.info("El numero es capicua")
+          : console.info("El numero no es capicua");
+      };
+
+      const factorial = (numero = undefined) => {
+        if (numero === undefined)
+          return console.warn("Debe introducir un numero");
+
+        let i = 1;
+        let producto = i;
+        while (i < numero) {
+          producto *= i + 1;
+          i++;
+        }
+        return console.info(producto);
+      };
+
+      numeroAleatorio();
+      esCapicua(1991);
+      factorial(5);
     </script>
   </body>
 </html>
