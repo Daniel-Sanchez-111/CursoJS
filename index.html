@@ -92,7 +92,7 @@
 
       /* ---EJERCICIOS 5 - 8 */
 
-      const invertirCadena = (cadena = "", busqueda = undefined) =>
+      const invertirCadena = (cadena = "") =>
         !cadena
           ? console.warn("Debe introducir una cadena")
           : console.info(convertirCadena(cadena).split("").reverse().join(""));
@@ -115,20 +115,20 @@
 
       const esPalindromo = (cadena = "") => {
         if (!cadena) return console.warn("Debe introducir una cadena");
+        cadena = convertirCadena(cadena).toLowerCase();
+        let invertido = cadena.split("").reverse().join("");
 
-        let invertido = convertirCadena(cadena).split("").reverse().join("");
-
-        if (convertirCadena(cadena) === invertido) {
-          return console.info("Es palindromo");
-        } else {
-          return console.info("No es palindromo");
-        }
+        return convertirCadena(cadena) === invertido
+          ? console.info("Es palindromo")
+          : console.info("No es palindromo");
       };
 
       const eliminarPatron = (cadena = "", patron = "") =>
         !cadena || !patron
           ? console.warn("Debe introducir todos los parametros")
-          : console.info(convertirCadena(cadena).replaceAll(patron, ""));
+          : console.info(
+              convertirCadena(cadena).replace(new RegExp(patron, "ig"), "")
+            );
 
       console.info("Ejercicio 5");
       invertirCadena("hola mundo");
@@ -140,7 +140,7 @@
       esPalindromo("salas");
 
       console.info("Ejercicio 8");
-      eliminarPatron("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
+      eliminarPatron("xyz1, xyz2, xyz3, xyz4 y xyz5", "xYz");
     </script>
   </body>
 </html>
