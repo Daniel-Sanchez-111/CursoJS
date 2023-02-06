@@ -181,6 +181,64 @@
       numeroAleatorio();
       esCapicua(1991);
       factorial(5);
+
+      /* Ejercicios 12-14 */
+
+      const primo = (numero = undefined) => {
+        if (numero === undefined) return console.error("La entrada no puede ser indefinida");
+
+        if(numero === 1) return console.error("El numero debe ser mayor a 1");
+
+        if(Math.sign(numero) === -1) return console.error("El numero no puede ser negativo");
+        
+        //se utiliza un ciclo for para verificar si el numero es divisible por otros, de ser asi no es un numero primo
+        for (let index = 2; index < numero; index++) {
+            if (numero%index===0) {
+                return console.info(false);
+            }
+        }
+        return console.info(true);
+      }
+
+      
+
+      /* 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar. */
+
+      const esPar = (numero = undefined) => {
+        if(numero===undefined) return console.error("La entrada no puede ser indefinida");
+
+        if(numero===0) return console.error("El numero debe ser mayor a 0");
+
+        if(Math.sign(numero) === -1) return console.error("El numero no debe ser menor a 0");
+
+        return numero%2===0 
+            ? console.info("Es par")
+            :console.info("No es par");
+        
+      }
+
+      /* 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F. */
+
+      const convertirTemperatura = (temperatura = undefined, medicion = undefined) => {
+        if(temperatura===undefined || medicion === undefined) return console.error("Introduzca correctamente los datos");
+        medicion = medicion.toUpperCase();
+        switch (medicion) {
+            case "C":
+                temperatura = (temperatura * 1.8) + 32;
+                return console.info(temperatura+"F");   
+                break;
+            case "F":
+                temperatura = (temperatura-32) / 1.8;
+                return console.info(temperatura+"C");
+                break;
+            default:
+                break;
+        }
+      } 
+
+      primo(12);
+      esPar(28);
+      convertirTemperatura(0,"C");
     </script>
   </body>
 </html>
